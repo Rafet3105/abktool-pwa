@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#e07b00" />
+<!-- Apple (iOS) -->
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+  <title>Benennungskatalog Abkürzungstool</title>
+  <link rel="icon"
+        href="data:image/webp;base64,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" />
+
+  <style>
+    :root {
+      --ifm-orange: #e07b00;
+      --bg-light: #fff6ef;
+      --bg-dark: #1e1e1e;
+      --text-light: #333;
+      --text-dark: #f0f0f0;
+      --box-light: #fff;
+      --box-dark: #2a2a2a;
+      --note-light: #fff8f0;
+      --note-dark: #333;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      margin: 0;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    h2 { color: var(--ifm-orange); }
+    .toggle-container { text-align: right; margin-bottom: 10px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+    .container { display: flex; gap: 20px; flex-wrap: wrap; align-items:flex-start; }
+    .tool, .notes {
+      padding: 20px;
+      border-radius: 12px;
+      transition: background 0.3s, border 0.3s, box-shadow 0.2s;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+    .tool {
+      flex: 2;
+      background: var(--box-light);
+      border: 2px solid var(--ifm-orange);
+      padding: 20px 28px 20px 20px;
+      min-width: 0;
+    }
+    .notes {
+      flex: 1;
+      background: var(--note-light);
+      border: 2px dashed var(--ifm-orange);
+      min-width: 220px;
+    }
+    body.dark .tool { background: var(--box-dark); box-shadow: none; }
+    body.dark .notes { background: var(--note-dark); box-shadow: none; }
+
+    /* Textarea */
+    textarea {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid var(--ifm-orange);
+      border-radius: 4px;
+      resize: vertical;
+      background: #ffffff;
+      color: var(--text-light);
+      transition: background 0.3s, color 0.3s, border 0.3s;
+      font-family: inherit;
+      line-height: 1.4;
+    }
+    body.dark textarea {
+      background: #3a3a3a;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.08);
+      caret-color: #ffffff;
+    }
+    textarea::placeholder { color: #999999; opacity: 1; }
+    body.dark textarea::placeholder { color: #cccccc; }
+
+    /* Buttons */
+    button {
+      padding: 8px 14px;
+      background: var(--ifm-orange);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95em;
+    }
+    button:hover { transform: translateY(-1px); transition: transform .12s; }
+    button.secondary { background: transparent; color: var(--ifm-orange); border: 1px solid rgba(224,123,0,0.12); }
+    .small { padding:6px 10px; font-size:0.9em; border-radius:6px; }
+
+    /* Ausgabefeld (kein Flex, damit keine Lücken zwischen <b> entstehen) */
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      background: var(--box-light);
+      border: 1px solid var(--ifm-orange);
+      border-radius: 6px;
+      white-space: pre-wrap;
+      text-transform: uppercase;
+      transition: background 0.3s;
+      display: block;
+    }
+    body.dark #output { background: var(--box-dark); }
+
+    #charCount { margin-top: 10px; font-weight: bold; }
+    #warningText { margin-top: 5px; color: red; font-weight: bold; }
+
+    .notes ul { list-style: none; padding-left: 0; margin:0; }
+    .notes li { margin: 5px 0; padding: 5px; background: var(--box-light); border-radius: 4px; transition: background 0.3s; text-transform: uppercase; }
+    body.dark .notes li { background: var(--box-dark); color:var(--text-dark); }
+
+    /* Progress bar */
+    .progress { height:8px; background:#eee; border-radius:6px; overflow:hidden; margin-top:10px; }
+    #progBar { height:100%; width:0%; transition:width .2s; background:linear-gradient(90deg,var(--ifm-orange),#ffb96b); }
+
+    /* Fokus sichtbar */
+    textarea:focus, button:focus, .copy-btn:focus {
+      outline: 3px solid rgba(224,123,0,0.18);
+      outline-offset: 2px;
+    }
+
+    /* Uppercase toggle (prominent) */
+    /* verstecke das native Checkbox-Element, aber halte es für Screenreader verfügbar */
+    #upperCaseToggle { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    #upperCaseToggleLabel {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 2px solid var(--ifm-orange);
+      border-radius: 8px;
+      cursor: pointer;
+      background: var(--box-light);
+      color: var(--ifm-orange);
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: background .15s, color .15s, box-shadow .15s;
+      user-select: none;
+    }
+    body.dark #upperCaseToggleLabel { background: var(--box-dark); color: var(--text-dark); border-color: rgba(255,255,255,0.12); }
+    /* wenn aktiv -> orange Hintergrund + weiße Schrift */
+    #upperCaseToggle:checked + #upperCaseToggleLabel {
+      background: var(--ifm-orange);
+      color: #ffffff;
+      border-color: var(--ifm-orange);
+      box-shadow: 0 8px 22px rgba(224,123,0,0.14);
+    }
+
+    @media (max-width: 900px) {
+      .container { flex-direction: column; }
+      .notes { min-width: unset; width: 100%; }
+    }
+
+    .controls { display:flex; gap:8px; align-items:center; }
+    .switch { display:inline-flex; gap:8px; align-items:center; }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <div style="display:flex; gap:12px; align-items:center;">
+      <h2 style="margin:0;">Abkürzungstool</h2>
+      <!-- prominenter Uppercase-Toggle: input (visuell versteckt) + Label -->
+      <div class="switch" style="font-size:0.95em; margin-left:8px;">
+        <input id="upperCaseToggle" type="checkbox" />
+        <label for="upperCaseToggle" id="upperCaseToggleLabel" aria-live="polite">Ergebnis in GROSSBUCHSTABEN</label>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="darkToggle" title="Dark Mode">🌓 Dark Mode</button>
+      <!-- Hinweis-Button entfernt — kein "Einstellung wird gespeichert" mehr -->
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="tool">
+      <label for="inputText">Text eingeben:</label>
+      <textarea id="inputText" placeholder="Gib hier deinen Text ein…"></textarea>
+
+      <div id="output" aria-live="polite"></div>
+
+      <div style="display:flex; gap:8px; margin-top:10px; align-items:center;">
+        <button id="copyBtn" class="small">Kopieren</button>
+        <button id="downloadBtn" class="small secondary">Als .txt herunterladen</button>
+        <button id="clearBtn" class="small">Löschen</button>
+      </div>
+
+      <div class="progress" aria-hidden="true"><div id="progBar"></div></div>
+
+      <div id="charCount"></div>
+      <div id="warningText"></div>
+    </div>
+
+    <div class="notes">
+      <strong>Verwendete Abkürzungen:</strong>
+      <ul id="abkuerzungList"></ul>
+    </div>
+  </div>
+
+  <script>
+    // Katalog (behalte bitte hier deine vollständigen Einträge)
+    const katalog = {
+      "ABDECKBLECH": "ABDECKBLC",
+      "ABDECKHAUBE": "ABDECKHAUBE",
+      "ABDECKKAPPE": "ABDECKKAPPE",
+      "ABDECKKLEBEBAND": "ABDECKKLEBEBAND",
+      "ABDECKPLATTE": "ABDECKPLATTE",
+      "ABDECKUNG": "ABDECKUNG",
+      "ABGEDREHTES GEWINDE": "ABGWD",
+      "ABGEGLICHEN": "ABG",
+      "ABGESCHIRMT": "ABGESCH",
+      "ABGLEICH": "ABGL",
+      "ABLAGE": "ABLAGE",
+      "ABMASS": "ABMASS",
+      "ABSCHIRMBECHER": "ABSCHBECH",
+      "ABSCHIRMBLECH": "ABSCHBLC",
+      "ABSCHIRMFOLIE": "ABSCHFOL",
+      "ABSCHIRMROHR": "ABSCHROHR",
+      "ABSCHIRMTOPF": "ABSCHTOPF",
+      "ABSCHIRMUNG": "ABSCHG",
+      "ABSCHLUSSBOLZEN": "ABSCHLBLZ",
+      "ABSCHLUSSSTOPFEN": "ABSCHLSTOPF",
+      "ABSCHLUSSDECKEL": "ABSCHLDECK",
+      "ABSTANDSHÜLSE": "ABSTHUE",
+      "ABSTÜTZUNG": "ABSTUETZU",
+      "ABTRIEB": "ABTR",
+      "ACHSE": "ACHSE",
+      "ACHTKANT": "8KT",
+      "ACRYLGLASFASER": "ACRGF",
+      "ADAPTER": "ADAPT",
+      "ADAPTERGEHÄUSE": "ADAPTGEH",
+      "ADAPTERDECKEL": "ADAPTDECKEL",
+      "ADERENDHÜLSE": "ADERNDHUE",
+      "ANALOG": "AN",
+      "ANBAU": "ANBAU",
+      "ANGEBOHRT": "AGBO",
+      "ANKER": "ANK",
+      "ANLAUFÜBERWACHER": "AUE",
+      "ANSATZ": "ANS",
+      "ANSCHLAG": "ANSCHLAG",
+      "ANSCHLUSSKLEMME": "ANSCHLKL",
+      "ANSCHLUSSPLAN": "ANSCHLPL",
+      "ANSCHLUSS": "ANSCHL",
+      "ANTRIEB": "ANTR",
+      "ANTRIEB KOMPLETT": "ANTR KPL",
+      "ANWEISUNG": "ANW",
+      "ARNITEL": "ARNITEL",
+      "AUFGEBOGEN": "AFGB",
+      "AUFHÄNGUNG": "AUFHAENGU",
+      "AUFKLEBER": "AUFKL",
+      "AUFNAHME": "AUFN",
+      "AUFSATZ": "AUFS",
+      "AUFSCHRAUBLINSE": "AUFSHRLINSE",
+      "AUGE": "AUG",
+      "AUSGLEICH": "AUSGL",
+      "AUSGLEICHSGUMMI": "AUSGLGUMMI",
+      "AUSSCHALTBAUGRUPPE ZUR DATENAUSKOPPLUNG": "AUSCHALT BG ZUR DATENAUSKPL",
+      "AUSSEN": "AUS",
+      "BAUGRUPPE": "BAUGR",
+      "BANDSTAHL": "BDSTAHL",
+      "BEARBEITET": "BB",
+      "BEDIENUNGSANLEITUNG": "BEDANLTG",
+      "BEDÄMPFUNGSFOLIE": "BEDAEMPFFO",
+      "BEDÄMPFUNGSRING": "BEDAEMPFRG",
+      "BEDRAHTET": "BEDR",
+      "BEDRUCKT": "BEDRU",
+      "BEFESTIGUNG": "BEFESTG",
+      "BEFESTIGUNGSSCHELLE": "BEFESTSCHELLE",
+      "BEFESTIGUNGSWINKEL": "BEFESTWKL",
+      "BELEUCHTUNG": "BEL",
+      "BESCHICHTET": "BES",
+      "BESCHRIFTUNGSVORGABE": "BESCHRV",
+      "BESTELLZEICHNUNG": "BESTELLZCHNG",
+      "BESTÜCKUNG": "BESTG",
+      "BESTÜCKUNGSPLAN": "BESTPL",
+      "BESTÜCKT": "BEST",
+      "BINÄR": "B",
+      "BLECH": "BLC",
+      "BLAU": "BL",
+      "BLECHSCHRAUBE": "BLCSHR",
+      "BLENDE": "BLENDE",
+      "BLIND": "BLI",
+      "BLINDSTOPFEN": "BLISTOPF",
+      "BOLZEN": "BLZ",
+  "BRAUN": "BR",
+  "BREIT": "BREIT",
+  "BUCHSE": "BU",
+  "BUCHSENKLEMME": "BUKL",
+  "BUCHSENKONTAKT": "BUKONT",
+  "BÜGEL": "BGL",
+  "BÜNDIG": "B",
+  "BUND": "BND",
+  "BUNDHÜLSE": "BNDHUE",
+  "CANNONSTECKER": "CS",
+  "CELLMOLL": "CELLMOLL",
+  "CONTROLLER": "CONTR",
+  "CRASTIN": "CRASTIN",
+  "DECKEL": "DECKEL",
+  "DELRIN": "DELRIN",
+  "DEMONTAGE": "DEMONT",
+  "DESMOPAN": "DESMOPAN",
+  "DIA": "DI",
+  "DIAGNOSE & POWER": "DIAGPOW",
+  "DICHTKEGEL": "DCHTKEG",
+  "DICHTRING": "DCHTRG",
+  "DICHTSTOPFEN": "DCHTSTOPF",
+  "DICHTUNG": "DCHTG",
+  "DIODE": "D",
+  "DISTANZRING": "DISTRG",
+  "DISTANZROHR": "DISTROHR",
+  "DISTANZSCHEIBE": "DISTSHB",
+  "DISTANZSTÜCK": "DISTSTCK",
+  "DOKUMENTATION": "DOKU",
+  "DOPPEL": "DP",
+  "DOPPEL LED": "2LED",
+  "DOPPELLINSE": "DPLINSE",
+  "DOSIERNADEL": "DOSNAD",
+  "DRAHT": "DRAHT",
+  "DRAHTBRUCHÜBERWACHUNG": "DBUE",
+  "DRAHTANSCHLAG": "DRAHTANSCHL",
+  "DREI-LEITER": "3L",
+  "DREIKANT": "3KT",
+  "DREHZAHLGEBER": "DREHZAHLGEBER",
+"DRUCKHÜLSE": "DRUCKHUE",
+"DRUCKRING": "DRUCKRG",
+"DRUCKSCHRAUBE": "DRUCKSHR",
+"EINBAU": "EB",
+"EINBAUADAPTER": "EBADAPT",
+"EINBAUANWEISUNG": "EBAN",
+"EINBAUHINWEIS": "EBHI",
+"EINBAUSTECKER": "EBST",
+"EINPRESSBUCHSE": "EINPRESSBU",
+"EINSATZ": "EINSATZ",
+"EINSTECKBEUTEL": "EINSTECKBEUTEL",
+"EINSTELLHINWEIS": "EINSTELLHINW",
+"EINWEGLICHTSCHRANKE": "EINWLSK",
+"ELEKTRODE": "ELEKTRODE",
+"ELEKTRONIK": "ELEKTR",
+"ELEKTRONIK ABG": "ELA",
+"ELEKTRONIK KPL": "ELK",
+"ELEKTRONIK KPL GEPRÜFT": "ELKG",
+"ELEKTRONIK ABG VRG": "EAV",
+"ELEKTRONIK UMSPRITZT": "ELU",
+"ELEKTRONIK VRG": "ELV",
+"ELEKTRONIK VOR ABG": "EMA",
+"ELEKTRONIK MONTIERT GEPRÜFT": "ELMG",
+"EMPFÄNGER": "EMPF",
+"ENDANSCHLAG": "ENDANSCHL",
+"ENDE": "END",
+"ENDGERÄTEHÜLLE": "ENDGERHUELLE",
+"ENDHÜLSE": "ENDHUE",
+"ENDSTUFE": "ENDST",
+"ENTKOPPELUNG": "ENK",
+"ENTLÜFTUNGSBOHRUNG": "ENTLBO",
+"ENTSTÖRT": "ENTSTOERT",
+"ENTWURF": "ENTWURF",
+"ERHÖHTER SCHALTABSTAND": "SN+",
+"ERDUNGSFEDER": "ERDFED",
+"ERSATZFIBEROPTIK": "ERSATZFIBEROPTIK",
+"EXTRUDIERT": "EXTR",
+"EXZENTER": "EXZENTER",
+"FÄCHER": "FCH",
+"FÄCHERSCHEIBE": "FAECHERSHB",
+"FALTKARTON": "FALTKARTON",
+"FALTSCHACHTEL": "FALTSCHACHTEL",
+"FASE": "FS",
+"FASSUNG": "FASSUNG",
+"FEDER": "FED",
+"FEDERRING": "FEDRG",
+"FEDERSCHEIBE": "FEDSHB",
+"FEDERSPANGE": "FEDSPANGE",
+"FENSTERPROFIL": "FENSTERPROFIL",
+"FESTEINGESTELLTES POTI": "FEST",
+"FESTEINGESTELLTER SCHALTABSTAND": "SN FIX",
+"FEUCHTERESISTENT": "FEUCHTRESIST",
+"FILTER": "FILTER",
+"FIXIERSTIFT": "FIXIERSTI",
+"FIXIERUNG": "FIXIERUNG",
+"FIXIERUNGSEINLAGE": "FIXEINL",
+"FLACH": "FL",
+"FLACHBANDKABEL": "FLBANDKAB",
+"FLACHDICHTUNG": "FLDCHTG",
+"FLACHGLASSCHEIBE": "FLGLASSHB",
+"FLACHSTECKER": "FLST",
+"FLACHSTECKERHÜLSE": "FLSTHUE",
+"FLÄCHE": "FLAE",
+"FLANSCH": "FLSH",
+"FLÜGEL": "FLG",
+"FLÜGELMUTTER": "FLGMU",
+"FLÜGELSCHRAUBE": "FLGSCHR",
+"FOLIE": "FOL",
+"FORM;FÖRMIG": "FORM",
+"FOTODIODE": "FOTOD",
+"FRONTBÜNDIG": "FB",
+"FRONTEND": "FE",
+"FRONTPLATTE": "FRONTPL",
+"FRONTRAHMEN": "FRONTR",
+"FRONTSCHEIBE": "FRONTSHB",
+"FUSSRIEGEL": "FUSSRIEGEL",
+"FÜHRUNG": "FHRG",
+"FÜHRUNGSSTIFT": "FHRGSTI",
+"FÜLLSTOPFEN": "FUELLSTO",
+"FÜLLSCHEIBE": "FUELLSHB",
+"FÜR": "F",
+"GABEL": "GABEL",
+"GABELHALTERUNG": "GABELHALTERUNG",
+"GALVANISCH": "GAL",
+"GEDRUCKTE SCHALTUNG": "GEDR SCHTG",
+"GEGENHALTER": "GEGENHA",
+"GEHÄUSE": "GEH",
+"GEHÄUSEABSCHLUß": "GEHABSCHL",
+"GEHÄUSEOBERTEIL": "GEHOTEIL",
+"GEHÄUSERÜCKWAND": "GEHRUECKW",
+"GEHÄUSEUNTERTEIL": "GEHUTEIL",
+"GELB": "GE",
+"GEPRÄGT": "GPRG",
+"GERÄT": "GER",
+"GERÄTESTECKER": "GERST",
+"GEROLLT": "GRLT",
+"GESAMTABSCHIRMUNG": "GESABSCH",
+"GESCHLITZT": "GSZ",
+"GESCHLOSSEN": "GSHLO",
+"GESCHWEISST": "GES",
+"GETEILT": "GETEILT",
+"GEWICKELT": "GEW",
+"GEWELLT": "GWL",
+"GEWINDE": "GWD",
+"GEWINDEBUCHSE": "GBUCHSE",
+"GEWINDEEINSATZ": "GEINS",
+"GEWINDEHÜLSE": "GHUE",
+"GEWINDEPLATTE": "GPL",
+"GEWINDEROHR": "GROHR",
+"GEWINDESTECKER": "GST",
+"GEWINDESTUTZEN": "GSTUTZEN",
+"GEWÖLBT": "GEWOE",
+"GIESSHARZ": "GIESSH",
+"GLASFASERANTEIL": "GFANT",
+"GLASFASERBÜNDEL": "GFB",
+"GLATT": "GLT",
+"GRAMM": "G",
+"GRAU": "GR",
+"GRIFF": "GRF",
+"GROSS;GRÖSSE": "GROE",
+"GRÜN": "GN",
+"GRUNDGEHÄUSE": "GRUNDGEH",
+"GRUNDPLATINE": "GRP",
+"GUMMI": "GUMMI",
+"GUMMISCHEIBE": "GUMMISHB",
+"GUMMISCHLAUCH": "GUMMISHL",
+"GUSSTEIL": "GUSSTEIL",
+"HÄRTER": "HAERTER",
+"HAFTETIKETT": "HAFTETIKETT",
+"HAKEN": "HAK",
+"HALTER, HALTERUNG,…": "HALT",
+"HALTEBLECH": "HALTBLC",
+"HALTERUNGSHÄLFTE": "HALTHAELFTE",
+"HAMMER": "HAM",
+"HAUBE": "HAUBE",
+"HEBEL": "HEBEL",
+"HF-LITZE": "HFLIZ",
+"HILFE": "HILFE",
+"HILFSVORRICHTUNG": "HILFSVORR",
+"HINWEIS": "HINW",
+"HINWEISSCHILD": "HINWSCHILD",
+"HIRSCHMANN STECKER": "HS",
+"HOCHFLEXIBEL": "H",
+"HOCH": "HOCH",
+"HOHL": "HH",
+"HOLZ": "HO",
+"HOLZSCHRAUBE": "HOLZSCHR",
+"HÜLSE": "HUE",
+"HYBRID BESTÜCKT": "HYB",
+"HYBRIDSCHALTKREIS": "HYBSCHLTKR",
+"HYSTERESE": "HYSTERESE",
+"HYTREL": "HYRTEL",
+"IO-LINK": "IO",
+"ILLUMINATION": "ILLU",
+"IMPULS": "IMP",
+"INDUKTIV": "IND",
+"INITIATORKOPF": "INITIATORKOPF",
+"INNEN": "INNEN",
+"INNENGEWINDE": "INNENG",
+"INNENGEWINDERING": "INNENGR",
+"ISOLIERBUCHSE": "ISOLBU",
+"ISOLIEREINSATZ": "ISOLEINS",
+"ISOLIERHÜLSE": "ISOLHUE",
+"ISOLIERRING": "ISOLRG",
+"ISOLIERROHR": "ISOLROHR",
+"ISOLIERSCHEIBE": "ISOLSHB",
+"ISOLIERSCHLAUCH": "ISOLSHL",
+"ISOLIERTEIL": "ISOLTEIL",
+"ISOLIERUNG": "ISOL",
+"JUSTIERSCHRAUBE": "JUSTIERSCHR",
+"JUSTIERUNG": "JUSTIERUNG",
+"KABEL": "KAB",
+"KABELDOSE": "KABDOSE",
+"KABELDURCHFÜHRUNG": "KDF",
+"KABELFAHNE": "KABFA",
+"KABELFÜHRUNG": "KABFRG",
+"KABELKUPPLUNG": "KABKUPPL",
+"KABELSCHNELLBINDER": "KABELSCHNELLBINDER",
+"KABELSTECKER": "KABST",
+"KABELSTOPFEN": "KABSTOPF",
+"KABELVERBINDUNG": "KABVERB",
+"KABELVERSCHRAUBUNG": "KABVERSHR",
+"KAMERA": "KAM",
+"KAPAZITIV": "KAP",
+"KAPSEL": "KPSL",
+"KANAL": "KANAL",
+"KANÜLE": "KANUELE",
+"KAPILLARROHR": "KAPILLARROHR",
+"KARTUSCHE": "KARTUSCHE",
+"KEGEL": "KEG",
+  "KEGELSTIFT": "KEGSTI",
+  "KEIL": "KEIL",
+  "KEINE BEARBEITUNG": "KB",
+  "KENNZEICHNUNGSTÜLLE": "KENNZTUE",
+  "KERAMIK": "KER",
+  "KERAMIKSCHEIBE": "KERSHB",
+  "KERNERDUNG": "KERD",
+  "KERNHALTERUNG": "KERNHALTERUNG",
+  "KLAMMER": "KLR",
+  "KLEBEBAND": "KLEBEBD",
+  "KLEBER": "KLEBER",
+  "KLEIN": "KL",
+  "KLEMME": "KLEMME",
+  "KLEMMABDECKUNG": "KLEMMABDECKUNG",
+  "KLEMMENAUFKLEBER": "KLEMMENAUFKL",
+  "KLEMMENBELEGUNGSHINWEIS": "KLEMMENBELHINW",
+  "KLEMMENHALTER": "KLEMMENHALTER",
+  "KLEMMBÜGEL": "KLEMMBGL",
+  "KLEMMKOMBISCHRAUBE": "KLEMMKOMBISHR",
+  "KLEMMKÖRPER": "KLEMMKOER",
+  "KLEMMSCHRAUBE": "KLEMMSCHR",
+  "KLEMMSOCKEL": "KLEMMSOCKEL",
+  "KLEMMSTÜCK": "KLEMMSTUE",
+  "KLINGE": "KLINGE",
+  "KNEBEL": "KNB",
+  "KNICKSCHUTZHÜLLE": "KNSCHTUELLE",
+  "KODIERBRÜCKE": "KODIERBR",
+  "KODIERNAGEL": "KODIERNAGEL",
+  "KODIERSTIFT": "KODIERSTI",
+  "KOLBEN": "KOLBEN",
+  "KOLBENDETEKTOR": "KOLBDET",
+  "KOMPAKT": "KOMPAKT",
+  "KOMPENSATIONSSPULE": "KOMPENSATIONSSPULE",
+  "KOMPLETT": "KPL",
+  "KOMPONENTE": "KOMP",
+  "KONDENSATOR": "KOND",
+  "KONFEKTIONIERT": "KONF",
+  "KONFEKTIONIERTE LEITUNG": "KLTG",
+  "KONFORMITÄTSBESCHEINIGUNG": "KONFORMBESCHEI",
+  "KONSOLE": "KONSOLE",
+  "KONTAKT": "KONT",
+  "KONTAKTBUCHSE": "KONTBUCHSE",
+  "KONTAKTBLECH": "KONTBL",
+  "KONTAKTFEDER": "KONTFED",
+  "KONTAKTFOLIE": "KONTFOL",
+  "KONTAKTMESSER": "KONTMESSER",
+  "KONTAKTRING": "KONTRG",
+  "KONTAKTSTIFT": "KONTSTI",
+  "KONTAKTSTÜCK": "KONTSTCK",
+  "KONTUR": "KONTUR",
+  "KOORDINATEN": "KOORD",
+  "KOPF": "KPF",
+  "KOPFEINSTECKSCHACHTEL": "KPFEINST",
+  "KORB": "KORB",
+  "KORREKTURFAKTOR 1": "K1",
+  "KREUZ": "KRZ",
+  "KRONE": "KRO",
+  "KÜHLBLECH": "KUEHL BLC",
+  "KÜHLKÖRPER": "KUEHLKOERPER",
+  "KUGEL": "KUG",
+  "KUNSTSTOFF": "KUNSTST",
+  "KUNSTSTOFFDRAHT": "KUNSTSTDRAHT",
+  "KUNSTSTOFFSCHEIBE": "KUNSTSTSHB",
+  "KUPPLUNG": "KUPPL",
+  "KUPPLUNGSDOSE": "KUPPLDOSE",
+  "KURZ": "K",
+  "Kundenspezifische Applikation": "KSA",
+  "KURZSCHLUSSBUCHSE": "KSCHLUSSBU",
+  "KURZSCHLUSSFEST": "KSS",
+"LÄNDERPAKET": "LAENDERPAKET",
+"LÄNGENAUSGLEICH": "LAENGENAUSGL",
+"LAGER": "LAGER",
+"LAGERBOCK": "LAGERBOCK",
+"LANG": "L",
+"LAPPEN": "LAP",
+"LASCHE": "LASCHE",
+"LASERETIKETTENBAND": "LASERETIKETTENBAND",
+"LASERKOPIERETIKETTEN": "LASKOPETIK",
+"LASERFOLIE": "LASERFOL",
+"LAYOUT (LEITERBILD)": "LAY",
+"LEFI": "LE",
+"LEFI ABGEGLICHEN": "LEA",
+"LEISTUNGSBLOCK": "LEISTUNGSBLOCK",
+"LEITERFILM": "LEFI",
+"LEITERFILM BESTÜCKT": "LEB",
+"BESTÜCKPLAN LE": "LEB",
+"LEITERFILMKONTUR": "LEFIKONTUR",
+"LEITERFILM KPL": "LEK",
+"LEITERFILM KPL BESCHICHTET": "LEKB",
+"LEITERFILM VORMONTIERT": "LEM",
+"LEITERFILM TEILBESTÜCKT": "LEFI TEILBEST",
+"LEITERPLATTE": "LP",
+"LEITERPLATTE BESTÜCKT": "LPB",
+"BESTÜCKPLAN LP": "LPB",
+"LPB/BESTÜCKSEITE": "LPB BS",
+"LPB/LÖTSEITE": "LPB LS",
+"LEITERPLATTE KOMPLETT": "LPK",
+"LEITERPLATTE KOMPLETT BESCHICHTET": "LPKB",
+"LEITERPLATTENPAKET": "LPP",
+"TESTPUNKTPLAN": "LPT",
+"LEITERPLATTE VORMONTIERT": "LPV",
+"LEITUNG": "LTG",
+"LEITUNG GEWICKELT": "LTGG",
+"LEITUNG KOMPLETT": "LTGK",
+"LEITUNG VORMONTIERT": "LTGV",
+"LICHT SENDE EMPFÄNGER": "LICHTSENDEEMPF",
+"LICHTDOM": "LIDO",
+"LICHTLEITER": "LL",
+"LICHTSCHRANKE": "LSK",
+"LINKS": "LI",
+"LINSE": "LINSE",
+"LINSENGEHÄUSE": "LINSENGEH",
+"LINSENSCHRAUBE": "LINSENSHR",
+"LITER": "LT",
+"LITZE": "LIZ",
+"LÖTAUGE": "LOETAUGE",
+"LOCH": "LO",
+"LÖCHER": "LOE",
+"LUFTSTROMWÄCHTER": "LSW",
+"LUMBERGSTECKER": "LS",
+"MAGNET": "MAGNET",
+"MAKROLON": "MAKROLON",
+"MASCHINE": "MASCH",
+"MASSERING": "MASSERG",
+"MASSZEICHNUNG": "MASSZCHNG",
+"MASTERBATCH": "MB",
+"MEHRFACHSTECKER": "MEHRFACHST",
+"MESSDORN": "MESSDORN",
+"METALLSCHUTZSCHLAUCHSTUTZEN": "MS",
+"METER": "M",
+"MILLIMETER": "MM",
+"MINIGRIP BEUTEL": "MINIGRIPBEUTEL",
+"MIT": "MIT",
+"MINUTE": "MIN",
+"MIT DURCHGEHENDEN GEWINDE": "MDG",
+"MIT VERPOLSCHUTZ": "MVSCH",
+"MITNEHMER": "MITNEHMER",
+"MITNEHMERWELLE": "MITNEHMERWELLE",
+"MOBILKAMERA": "MOBKAM",
+"MODUL": "MODUL",
+"MODULTECHNIK": "M",
+"MONTAGE": "MONT",
+"MONTAGEANLEITUNG": "MONTANLTG",
+"MONTAGEANWEISUNG": "MONTANW",
+"MONTAGEHINWEIS": "MONTHINW",
+"MONTAGEMUFFE": "MONTMUFFE",
+"MONTAGEROHR": "MONTROHR",
+"MONTAGESCHEIBE": "MONTSHB",
+"MONTAGEZUBEHÖR": "MONTZUB",
+"MONTAGEHÜLSE": "MONTHUE",
+"MUFFE": "MUFFE",
+"MULTIFUNKTION": "MULTF",
+"MUTTER": "MU",
+"NABE": "NABE",
+"NAGEL": "NGL",
+"NAPF": "NAPF",
+"NASE": "NASE",
+"NATUR(FARBE)": "NA",
+"NAMUR": "N",
+"NEIGUNG": "NEIG",
+"NENNSPANNUNG": "NENNSPANNUNG",
+"NÄHERUNGSSCHALTER": "NAEHSCHALTER",
+"NETZSOCKEL": "NETZSOCKEL",
+"NICHT BÜNDIG": "NB",
+"NIEDRIG": "NI",
+"NIEDERHALTER": "NIEDERHALTER",
+"NIET": "NT",
+"NOCKEN": "NOCKEN",
+"NUT": "NUT",
+"OBERTEIL": "OTEIL",
+"ÖFFNER": "OEFFNER",
+"ÖL": "OEL",
+"ÖLBESTÄNDIG": "OELBESTD",
+"OESE": "OE",
+"OFFEN": "OF",
+"OVAL": "OV",
+"OHNE ENTLÜFTUNGSBOHRUNG": "OENTBLO",
+"OHNE IFM AUFDRUCK": "ODR",
+"OHNE LED": "OLED",
+"OHNE NETZWERK": "ONETZW",
+"OHNE OBERFLÄCHENBEHANDLUNG": "OOFL",
+"OHNE VERPACKUNG": "OVERP",
+"OHNE TYPENSCHILD": "OTA",
+"OHNE VERPOLSCHUTZ": "OVSCH",
+"OHNE TÜLLE": "OTUE",
+"ORANGE": "OR",
+"O-RING": "O-RG",
+"OPTIKEINSATZ": "OPTIKEINS",
+"PACKAUFDRUCK": "PA",
+"PASSBUCHSE": "PABU",
+"PASSKERBSTIFT": "PAKBSTI",
+"PASSUNG": "PASSUNG",
+"PERFORMANCE": "PERF",
+"P-FILTER-LASER-LSK": "P-FILTER-LASER-LSK",
+"PHOTOPROZESS": "PHO",
+"PIKTOGRAMM": "PIKTOGRAMM",
+"PINZETTE": "PINZETTE",
+"PLANSCHEIBE": "PLANSHB",
+"PLASMA": "PL",
+"PLATTE": "PLATTE",
+"POCAN NATUR": "PNA",
+"POCAN ORANGE": "POR",
+"POLARISATIONSFILTER": "PFILTER",
+"POLARISATIONSFILTER LASERLICHTSCHRANKEN": "PFILTER LASER LSK",
+"POLYCARBONAT": "POLYCARBONAT",
+"POSITION": "POS",
+"POTENTIOMETER": "POTI",
+"POTENTIOMETERDICHTUNG": "POTIDCHTG",
+"POWERBOARD": "POWER",
+"PROFIL": "PROFIL",
+"PROGRAMMIERBÜGEL": "PROGRBGL",
+"PROGRAMMIERSTECKER": "PROGRST",
+"PROGRAMMIERSTIFT": "PROGRSTI",
+"PROGRAMMIERVORSCHRIFT": "PV",
+"PROGRAMMIERWINKEL": "PROGRWKL",
+"PROZESSANSCHLUSS": "PZA",
+"PUR-KABEL": "PUR",
+"PUR-HOCHFLEXIBEL": "PH",
+"PUR-SILIKON-HOCHFLEXIBEL": "PSH",
+"PRÜFSPEZIFIKATION": "PS",
+"PRÜFVORSCHRIFT ENTWICKLUNG": "PVE",
+"PRÜFVORSCHRIFT FILMTECHNIK": "PVF",
+"PRÜFVORSCHRIFT PRODUKTION": "PVP",
+"QUASI BÜNDIG": "XB",
+"RAD": "RAD",
+"RÄNDEL": "RDL",
+"RAHMEN": "RAHMEN",
+"RASTER": "RASTER",
+"REDUKTION": "REDUKTION",
+"REDUZIERUNG": "REDUZ",
+"REFLEXLICHTSCHRANKE": "REFLLSK",
+"REFLEXLICHTTASTER": "REFLLICHTTAST",
+"REGLER": "REGLER",
+"RELAIS": "RELAIS",
+"RIEGEL": "RIEGEL",
+"RILLE": "RIL",
+"RING": "RG",
+"RIPPE": "RIPPE",
+"ROHR": "ROHR",
+"ROHRNIET": "ROHRNT",
+"ROHRVERSCHRAUBUNG": "ROHRVERSHR",
+"ROT": "RT",
+"ROHTEIL": "ROH",
+"ROTZLERSTECKER": "RS",
+"RÜCKWAND": "RUECKW",
+"RUND": "RD",
+"RUNDDOSE": "RDDOSE",
+"RUNDDRAHT": "RDDR",
+"RUNDLAUF": "RDLAUF",
+"RUNDSTECKER": "RDST",
+"SÄULE": "SAEULE",
+  "SAFECOAT": "SC",
+  "SCHAFT": "SHA",
+  "SCHALE": "SCHALE",
+  "SCHALENKERN": "SCHALENKERN",
+  "SCHALTABSTAND": "SN",
+  "SCHALTER": "SCHALTER",
+  "SCHALTKREIS": "SCHALTKREIS",
+  "SCHALTMATTE": "SCHALTMATTE",
+  "SCHALTSTROM": "SCHALTSTROM",
+  "SCHALTUNG": "SCHTG",
+  "SCHALTSYMBOLAUFKLEBER": "SCHALTSYBMAUFKL",
+  "SCHALTZONENAUFKLEBER": "SCHALTZONENAUFKL",
+  "SCHARNIER": "SCHARNIER",
+  "SCHAUMSTOFFSTOPFEN": "SCHAUMSTOFFSTOPF",
+  "SCHEIBE": "SHB",
+  "SCHEIBENFEDER": "SHBFEDER",
+  "SCHIEBER": "SCHIEBER",
+  "SCHIEBESCHALTER": "SCHIEBESCHALTER",
+  "SCHLAUCH": "SHL",
+  "SCHLEIFRING": "SCHLEIFRG",
+  "SCHLEMMER STECKER": "SM",
+  "SCHLIEßER": "SCHLIESSER",
+  "SCHLITZ": "SZ",
+  "SCHLOSS": "SHLO",
+  "SCHMAL": "SCHMAL",
+  "SCHMELZKLEBER": "SCHMELZKL",
+  "SCHMIERUNG": "SCHMIERUNG",
+  "SCHNORRSICHERUNG": "SCHNORRSI",
+  "SCHRAUBE": "SHR",
+  "SCHRAUBENDREHER": "SHRDREHER",
+  "SCHRAUBKONTAKT": "SHRKONT",
+  "SCHRUMPFSCHLAUCH": "SCHRUMPFSHL",
+  "SCHRÄGSTÜCK": "SCHRSTC",
+  "SCHULTER": "SHU",
+  "SCHUTZ": "SCHUTZ",
+  "SCHUTZHÜLSE": "SCHUTZHUE",
+  "SCHUTZBLECH": "SCHUTZBLC",
+  "SCHUTZKAPPE": "SCHUTZKAPPE",
+  "SCHUTZKLEBEFOLIE": "SCHUTZKLFOL",
+  "SCHUTZLACK": "SCHUTZLACK",
+  "SCHUTZSCHALTER": "SCHUTZSCHALTER",
+  "SCHUTZSCHLAUCH": "SCHUTZSHL",
+  "SCHUTZSCHLAUCHSTUTZEN": "SCHUTZSHLSTUTZ",
+  "SCHWARZ": "SW",
+  "SCHWER": "SHWE",
+  "SECHSKANTMUTTER": "6KTMU",
+  "SECHSKANTSCHRAUBE": "6KTSHR",
+  "SEGMENT": "SEGM",
+  "SEITENSCHNEIDER": "SEITENSCHNEIDER",
+  "SEITLICH": "SEITL",
+  "SEKUNDEN": "S",
+  "SELBSTKLEBEETIKETT": "SELBSTKLEBEETIKETT",
+  "SELBSTSICHERND": "SSI",
+  "SENKSCHRAUBE": "SESCHR",
+  "SENKKOPFSCHRAUBE": "SENKSHR",
+  "SENSOR": "SENS",
+  "SENSORBLOCK": "SENSBLOCK",
+  "SENSORDECKEL": "SENSDECKEL",
+  "SENSORDICHTUNG": "SENSDCHTG",
+  "SENSORFLANSCH": "SENSFLSH",
+  "SENSORGEHÄUSE": "SENSGEH",
+  "SENSORRING": "SENSRG",
+  "SENSORSCHEIBE": "SENSSHB",
+  "SENSORSPITZE": "SENSSPITZE",
+  "SENSORSPULE": "SENSSPULE",
+  "SENSORSTIFT": "SENSSTI",
+  "SENSORTRÄGER": "SENSTR",
+  "SENSOROBERTEIL": "SENSOTEIL",
+  "SENSORWÜRFEL": "SENSWUE",
+  "SERIENGERÄT": "SERIENGER",
+  "SESO-Sesame Open": "SESO",
+  "SICHERHEIT": "SICHERHEIT",
+  "SICHERUNG": "SI",
+  "SICHERUNGSBLECH": "SIBL",
+  "SICHERUNGSSCHEIBE": "SISHB",
+  "SILIKON": "SILKON",
+  "SILIKONÖL": "SILIKONOEL",
+  "SILIKONSCHLAUCH": "SILIKONSHL",
+  "STROMLAUFPLAN": "SLP",
+  "SO-SmartOpener": "SO",
+"SONDENROHR": "SONDENROHR",
+  "SONDERGERÄT": "SONDER",
+  "SONDERGERÄT FRANKREICH": "SONDER F",
+  "SONDERGERÄT SCHWEDEN": "SONDER S",
+  "SONNENLICHTFILTER": "SONNENLICHTFILTER",
+  "SPANNEINSATZ": "SPNEINS",
+  "SPANNBÜGEL": "SPNBGL",
+  "SPANNFEDER": "SPNFED",
+  "SPANNMUTTER": "SPNMU",
+  "SPANNSCHEIBE": "SPNSHB",
+  "SPANNSTIFT": "SPNSTI",
+  "SPANNUNG": "U",
+  "SPANNUNGSREGLER": "SPANNUNGSREGLER",
+  "SPANNUNGSKOMPENSATIONSSPULE": "SPANNUNGSKOMPSPULE",
+  "SPINDELPOTENTIOMETER": "SPINDELPOTI",
+  "SPITZE": "SP",
+  "SPLINT": "SPL",
+  "SPRENGRING": "SPRGRG",
+  "SPULE": "SPULE",
+  "SPULENHALTER": "SPULENH",
+  "SPULENKÖRPER": "SPULENK",
+  "STANDARDS": "STD",
+  "STANDARDISIERUNG": "STANDG",
+  "STANDARDSTECKER": "STANDARDST",
+  "STANGE": "STG",
+  "STANZTEIL": "STANZTEIL",
+  "STATOR": "STATOR",
+  "STAUBSCHUTZSCHEIBE": "STAUBSCHUTZSHB",
+  "STECKER": "ST",
+  "STECKERADAPTER": "STADAPT",
+  "STECKEREINSATZ": "STEINS",
+  "STECKERGEHÄUSE": "STGEH",
+  "STECKERGERÄT": "STGER",
+  "STECKERVERBINDUNG": "STVERB",
+  "STECKFASSUNG": "STEFASSUNG",
+  "STECKHÜLSE": "STEHUE",
+  "STECKHÜLSEGEHÄUSE": "STEHUEGEH",
+  "STEG": "STEG",
+  "STEIN": "STN",
+  "STEUERGERÄT": "STEUERGER",
+  "STEURUNG": "STEURUNG",
+  "STIFT": "STI",
+  "STIFTKONTAKT": "STIFTKONT",
+  "STIFTSCHRAUBE": "STIFTSCHR",
+  "STIRNFLÄCHENAUFKLEBER": "STIRNFLAUFKL",
+  "STIRNWAND": "STIRNWAND",
+  "STOPFEN": "STOPF",
+  "STOPFENTELLER": "STOPFTELLER",
+  "STREBE": "STREBE",
+  "STROMLAUFPLAN": "SLP",
+  "STÜCK": "STCK",
+  "STÜTZBLECH": "STUETZBL",
+  "STUTZEN": "STUTZEN",
+  "SUMITOMO-STECKER": "SU",
+  "SUMMER": "SUMMER",
+  "SYNTRON": "SY",
+  "TYPAUFDRUCK": "TA",
+  "TANGENT": "TAN",
+  "TASTATUR": "TASTATUR",
+  "TASTER": "TASTER",
+  "TASTKOPF": "TASTK",
+  "TECHNISCHE BESCHREIBUNG LEITERPLATTE": "TBL",
+  "TECHNISCHE DATEN": "TD",
+  "TECHNICAL DATA SHEET": "TDS",
+  "TEFLON": "PTFE",
+  "TEFLONKAPPE": "PTFEKAPPE",
+  "TEIL": "TEIL",
+  "TEILBESTÜCKT": "TEILBEST",
+  "TEILERGEHÄUSE": "TEILERGEH",
+  "TEILIG": "TLG",
+  "TEILWINKEL": "TEILWKL",
+  "TELLER": "TE",
+  "TEMPERATUR": "TEMP",
+  "TEXTILGLASSCHLAUCH": "TEXTILGLASSHL",
+  "THYRISTOR": "THYR",
+  "THERMOPLASTISCHER GUMMI": "TP",
+  "TIEFZIEHBLECH": "TIEFZIEHBL",
+  "TORSON KOMPATIBEL": "AS",
+  "TRAGBOLZEN": "TRAGBLZ",
+  "TRÄGER": "TRAEG",
+  "TRÄGERDECKEL": "TRAEGDECKEL",
+  "TRÄGERGEHÄUSE": "TRAEGGEH",
+  "TRÄGERVERLÄNGERUNG": "TRAEGVER",
+  "TRANSISTOR": "TRANS",
+  "TRANSPARENT": "TRANSP",
+  "TRENNFOLIE": "TRENNFOLIE",
+  "TRENNFUGE": "TRENNFUGE",
+  "TRENNKANTE": "TRENNKANTE",
+  "TRENNSCHEIBEN": "TRENNSHB",
+  "TRENNWAND": "TRENNWAND",
+  "TRICHTER": "TRICHTER",
+  "TRIMMPOTENTIOMETER": "TRIMMPOTI",
+  "TRIMMWIDERSTAND": "TRIMMWID",
+  "TRIPPELSPIEGEL": "TRPSPG",
+  "TROCKENMITTEL": "TM",
+  "TUCHELSTECKER": "TS",
+  "TÜLLE": "TUELLE",
+  "ÜBERFÜLLSICHERUNG": "UEBERFUELLSICH",
+  "UNIPOLAR": "UP",
+  "UNIVERSAL": "UNI",
+  "UNIVERSALSTECKER": "US",
+  "UNTERTEIL": "UTEIL",
+  "UNTERLEGSCHEIBE": "UNTERLEGSHB",
+  "ÜBERWURFMUTTER": "UEBERWURFMU",
+  "UMRICHTER MODIFIKATION": "UM",
+  "VORGABE": "V",
+  "VERBINDER": "VERB",
+  "VERBINDUNG": "VERBG",
+  "VERGOSSEN": "VRG",
+  "VERKLEBT": "VKL",
+  "VERDREHFEST(IGKEIT)": "VF",
+  "VERDREHWINKEL": "VERDRWKL",
+  "VERLÄNGERUNG": "VERLAENG",
+  "VERNICKELT": "VNI",
+  "VERPACKUNG": "VERP",
+  "VERPACKUNGSEINHEIT": "VERPEINH",
+  "VERPACKUNGSHINWEIS": "VERPHINW",
+  "VERRIEGELUNG": "VERRIEGELUNG",
+  "VERSCHLUSS": "VERSCHL",
+  "VERSCHLUSSSTOPFEN": "VERSCHLSTOPF",
+  "VERSCHRAUBUNG": "VERSHR",
+  "VERSIEGELT": "VERS",
+  "VERSORGUNG": "VERSG",
+  "VERSTÄRKER": "VERST",
+  "VERTEILER": "VERT",
+  "VERZINKT": "VZI",
+  "VERZINNT": "VZN",
+  "VIEL": "VI...",
+  "VIERKANT": "4KT",
+  "VIOLETT": "VI",
+  "VOLL": "VL...",
+  "VOLUMENMESSTEIL": "VMT",
+  "VORBEDÄMPFUNG": "VORBEDAEMPF",
+  "VORLAGENBESCHREIBUNG": "VORLBES",
+  "VORMONTIERT": "VOR",
+  "VORRICHTUNG": "VORR",
+  "VORSERIENFERTIGUNG": "VORSERIENFERTIGUNG",
+  "WÄRME": "WAERME",
+  "WÄRMEREFLEKTIONSFILTER FLOATGLAS": "WÄRMEREFLFILTER FLOATGLAS",
+  "WÄRMELEITPAD": "WAERME LTP",
+  "WECHSELSTROM": "AC",
+  "WELLE": "WELLE",
+  "WEISS": "WS",
+  "WERKSTOFF": "WKST",
+  "WICKELDRAHT": "WICKELDRAHT",
+  "WICKLUNG": "WICKL",
+  "WIDERSTAND": "WID",
+  "WIDERSTANDSDRAHT": "WIDDRAHT",
+  "WINKEL": "WKL",
+  "WINKELAUFSATZ": "WKLAUFS",
+  "ZUSATZAUFDRUCK": "ZA",
+  "ZAHNSCHEIBE": "ZASHB",
+  "ZAPFEN": "ZPF",
+  "ZEICHNUNG": "ZCHNG",
+  "ZENTRIERSCHEIBE": "ZENTRSHB",
+  "ZENTRIERUNG": "ZENTR",
+  "ZUBEHÖR": "ZUBEH",
+  "ZUGFEDER": "ZUGFEDER",
+  "ZUGFESTIGKEIT": "ZUGFEST",
+  "ZUGENTLASTUNG": "ZUGENTL",
+  "ZUKAUFARTIKEL": "ZUKAUF",
+  "ZUSAMMENBAU": "ZSB",
+  "ZUSAMMENBAUZEICHNUNG": "ZSBZCHNG",
+  "ZUSATZAUFKLEBER": "ZA (2)",
+  "ZWEIFACHAUFKLEBER": "2FACHAUFKL",
+  "ZWEIFACHVERWENDER": "2FACHVERW",
+  "ZWEIKANT": "2KT",
+  "ZWEILEITER": "2L",
+  "ZWEILOCH": "2LO",
+  "ZWISCHENSTÜCK": "ZWISCHENSTUECK",
+  "ZWISCHENSTUTZEN": "ZWISCHENSTUTZEN",
+  "ZWÖLFKANT": "12KT",
+  "ZYLINDER": "ZYL",
+  "ZYLINDERSCHRAUBE": "ZYLSHR",
+  "ZYLINDERSTIFT": "ZYLSTI"
+
+    };
+
+    // Hilfsfunktionen
+    function escRegExp(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
+    function toPlainText(html) {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || "";
+    }
+    function autosize(el) {
+      if (!el) return;
+      el.style.height = 'auto';
+      el.style.height = (el.scrollHeight) + 'px';
+    }
+
+    // Ersetzen: case-insensitive, arbeitet auf Originaleingabe (ohne global uppercasing)
+    function ersetzeMitAbkuerzungen(input, mapping) {
+      let output = input;
+      const sortedKeys = Object.keys(mapping).sort((a,b) => b.length - a.length);
+      const used = new Set();
+
+      for (const key of sortedKeys) {
+        const pattern = escRegExp(key);
+        const regex = new RegExp(pattern, "gi"); // global + case-insensitive
+        if (regex.test(output)) {
+          used.add(key);
+          output = output.replace(regex, function() {
+            return `<b>${mapping[key]}</b>`;
+          });
+        }
+      }
+      return { text: output, used };
+    }
+
+    // Prozessfunktion
+    function processInput() {
+      const inputEl = document.getElementById("inputText");
+      const input = inputEl.value || "";
+      autosize(inputEl);
+
+      const result = ersetzeMitAbkuerzungen(input, katalog);
+
+      // Ausgabe als HTML (mit <b> Tags)
+      document.getElementById("output").innerHTML = result.text;
+
+      // Uppercase-Optik (CSS gesteuert)
+      const upperChecked = document.getElementById('upperCaseToggle').checked;
+      document.getElementById('output').style.textTransform = upperChecked ? 'uppercase' : 'none';
+
+      // Plain text für Zählung
+      const plainText = toPlainText(result.text);
+      const count = plainText.length;
+      document.getElementById("charCount").textContent = `Zeichen im Ergebnis: ${count}`;
+      document.getElementById("warningText").textContent = count > 40
+        ? "⚠️ Die maximale Länge von 40 Zeichen wurde überschritten."
+        : "";
+
+      // Fortschrittsbalken
+      const percent = Math.min(100, Math.round((count / 40) * 100));
+      document.getElementById('progBar').style.width = percent + '%';
+
+      // Abkürzungsliste
+      const usedList = Array.from(result.used).map(key =>
+        `<li>• ${key.toUpperCase()} → ${katalog[key]}</li>`
+      );
+      document.getElementById("abkuerzungList").innerHTML = usedList.join("");
+    }
+
+    // Dark Mode persistence (key: "dark", values "1"/"0")
+    function applyInitialDarkMode() {
+      const saved = localStorage.getItem('dark');
+      if (saved === '1') document.body.classList.add('dark');
+    }
+    function toggleDarkMode() {
+      const enabled = document.body.classList.toggle('dark');
+      localStorage.setItem('dark', enabled ? '1' : '0');
+    }
+
+    // Uppercase persistence (key: "uppercase", values "1"/"0"), default ON
+    function applyInitialUppercase() {
+      const saved = localStorage.getItem('uppercase');
+      if (saved === null) {
+        // Default: eingeschaltet
+        localStorage.setItem('uppercase', '1');
+        document.getElementById('upperCaseToggle').checked = true;
+      } else {
+        document.getElementById('upperCaseToggle').checked = (saved === '1');
+      }
+    }
+    function toggleUppercaseStorage() {
+      const checked = document.getElementById('upperCaseToggle').checked;
+      localStorage.setItem('uppercase', checked ? '1' : '0');
+    }
+
+    // Copy / Download / Clear
+    function copyResult() {
+      const plain = toPlainText(document.getElementById('output').innerHTML || "");
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(plain).then(()=> showTempMessage('Kopiert!')).catch(()=> fallbackCopy(plain));
+      } else fallbackCopy(plain);
+    }
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea'); ta.value = text;
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); showTempMessage('Kopiert!'); } catch(e){ alert('Kopieren fehlgeschlagen'); }
+      document.body.removeChild(ta);
+    }
+    function downloadTxtFile() {
+      const plain = toPlainText(document.getElementById('output').innerHTML || "");
+      const filename = 'abkuerzung_ergebnis.txt';
+      const blob = new Blob([plain], {type:'text/plain'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      URL.revokeObjectURL(a.href);
+      document.body.removeChild(a);
+    }
+    function clearAll() {
+      document.getElementById('inputText').value = '';
+      processInput();
+      autosize(document.getElementById('inputText'));
+    }
+
+    function showTempMessage(msg) {
+      const el = document.createElement('div');
+      el.textContent = msg;
+      el.style.position = 'fixed';
+      el.style.right = '20px';
+      el.style.bottom = '20px';
+      el.style.padding = '8px 12px';
+      el.style.background = 'rgba(0,0,0,0.7)';
+      el.style.color = '#fff';
+      el.style.borderRadius = '8px';
+      el.style.zIndex = 9999;
+      document.body.appendChild(el);
+      setTimeout(()=> el.remove(), 1200);
+    }
+
+    // Initialisierung
+    document.addEventListener('DOMContentLoaded', () => {
+      applyInitialDarkMode();
+      applyInitialUppercase();
+
+// Service Worker registrieren, falls unterstützt
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(reg => {
+      console.log('ServiceWorker registriert:', reg.scope);
+    }).catch(err => console.warn('ServiceWorker Registrierung fehlgeschlagen:', err));
+  });
+}
+
+      // Eventhandler
+      document.getElementById('darkToggle').addEventListener('click', () => { toggleDarkMode(); processInput(); });
+      document.getElementById('copyBtn').addEventListener('click', copyResult);
+      document.getElementById('downloadBtn').addEventListener('click', downloadTxtFile);
+      document.getElementById('clearBtn').addEventListener('click', clearAll);
+
+      const upperCb = document.getElementById('upperCaseToggle');
+      upperCb.addEventListener('change', () => { toggleUppercaseStorage(); processInput(); });
+
+      const ta = document.getElementById('inputText');
+      ta.addEventListener('input', () => { autosize(ta); processInput(); });
+
+      // initial
+      autosize(document.getElementById('inputText'));
+      processInput();
+    });
+  </script>
+</body>
+</html>
