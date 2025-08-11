@@ -20,14 +20,23 @@ self.addEventListener('install', event => {
   );
 });
 
-// Activate: cleanup old caches
+// Activate: cleanup old caches + notify clients about update
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.map(key => {
-        if (key !== CACHE_NAME) return caches.delete(key);
-      }))
-    ).then(() => self.clients.claim())
+    (async () => {
+      const cacheNames = await caches.keys();
+      await Promise.all(
+        cacheNames.map(name => {
+          if (name !== CACHE_NAME) return caches.delete(name);
+        })
+      );
+      // Clients informieren, dass Update bereitsteht
+      const clients = await self.clients.matchAll({ type: 'window' });
+      for (const client of clients) {
+        client.postMessage({ type: 'UPDATE_READY' });
+      }
+      await self.clients.claim();
+    })()
   );
 });
 

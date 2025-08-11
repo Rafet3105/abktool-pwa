@@ -1189,15 +1189,23 @@
       applyInitialDarkMode();
       applyInitialUppercase();
 
-      // Service Worker registrieren, falls unterstützt
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js').then(reg => {
-            console.log('ServiceWorker registriert:', reg.scope);
-          }).catch(err => console.warn('ServiceWorker Registrierung fehlgeschlagen:', err));
-        });
-      }
+// Service Worker registrieren, falls unterstützt
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(reg => {
+      console.log('ServiceWorker registriert:', reg.scope);
+    }).catch(err => console.warn('ServiceWorker Registrierung fehlgeschlagen:', err));
 
+    // Hier den Message-Listener ergänzen
+    navigator.serviceWorker.addEventListener('message', event => {
+      if (event.data && event.data.type === 'UPDATE_READY') {
+        if (confirm('Eine neue Version ist verfügbar. Jetzt neu laden?')) {
+          window.location.reload();
+        }
+      }
+    });
+  });
+}
       // Eventhandler
       darkToggle.addEventListener('click', () => { toggleDarkMode(); processInput(); });
       copyBtn.addEventListener('click', copyResult);
