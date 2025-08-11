@@ -111,7 +111,6 @@
       border: 1px solid var(--ifm-orange);
       border-radius: 6px;
       white-space: pre-wrap;
-      text-transform: uppercase;
       transition: background 0.3s;
       display: block;
     }
@@ -212,7 +211,7 @@
   </div>
 
   <script>
-    // Katalog (behalte bitte hier deine vollständigen Einträge)
+    // Katalog (vollständige Einträge wie von dir bereitgestellt)
     const katalog = {
       "ABDECKBLECH": "ABDECKBLC",
       "ABDECKHAUBE": "ABDECKHAUBE",
@@ -1066,39 +1065,18 @@
       return { text: output, used };
     }
 
-    // Prozessfunktion
-    function processInput() {
-      const inputEl = document.getElementById("inputText");
-      const input = inputEl.value || "";
-      autosize(inputEl);
-
-      const result = ersetzeMitAbkuerzungen(input, katalog);
-
-      // Ausgabe als HTML (mit <b> Tags)
-      document.getElementById("output").innerHTML = result.text;
-
-      // Uppercase-Optik (CSS gesteuert)
-      const upperChecked = document.getElementById('upperCaseToggle').checked;
-      document.getElementById('output').style.textTransform = upperChecked ? 'uppercase' : 'none';
-
-      // Plain text für Zählung
-      const plainText = toPlainText(result.text);
-      const count = plainText.length;
-      document.getElementById("charCount").textContent = `Zeichen im Ergebnis: ${count}`;
-      document.getElementById("warningText").textContent = count > 40
-        ? "⚠️ Die maximale Länge von 40 Zeichen wurde überschritten."
-        : "";
-
-      // Fortschrittsbalken
-      const percent = Math.min(100, Math.round((count / 40) * 100));
-      document.getElementById('progBar').style.width = percent + '%';
-
-      // Abkürzungsliste
-      const usedList = Array.from(result.used).map(key =>
-        `<li>• ${key.toUpperCase()} → ${katalog[key]}</li>`
-      );
-      document.getElementById("abkuerzungList").innerHTML = usedList.join("");
-    }
+    // DOM-Refs
+    const inputEl = document.getElementById("inputText");
+    const outputEl = document.getElementById("output");
+    const upperCb = document.getElementById('upperCaseToggle');
+    const charCountEl = document.getElementById("charCount");
+    const warningTextEl = document.getElementById("warningText");
+    const progBar = document.getElementById('progBar');
+    const abkListEl = document.getElementById('abkuerzungList');
+    const copyBtn = document.getElementById('copyBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const darkToggle = document.getElementById('darkToggle');
 
     // Dark Mode persistence (key: "dark", values "1"/"0")
     function applyInitialDarkMode() {
@@ -1114,24 +1092,57 @@
     function applyInitialUppercase() {
       const saved = localStorage.getItem('uppercase');
       if (saved === null) {
-        // Default: eingeschaltet
         localStorage.setItem('uppercase', '1');
-        document.getElementById('upperCaseToggle').checked = true;
+        upperCb.checked = true;
       } else {
-        document.getElementById('upperCaseToggle').checked = (saved === '1');
+        upperCb.checked = (saved === '1');
       }
     }
     function toggleUppercaseStorage() {
-      const checked = document.getElementById('upperCaseToggle').checked;
+      const checked = upperCb.checked;
       localStorage.setItem('uppercase', checked ? '1' : '0');
+    }
+
+    // Prozessfunktion
+    function processInput() {
+      const input = inputEl.value || "";
+      autosize(inputEl);
+
+      const result = ersetzeMitAbkuerzungen(input, katalog);
+
+      // Ausgabe als HTML (mit <b> Tags)
+      outputEl.innerHTML = result.text;
+
+      // Uppercase-Optik (CSS gesteuert)
+      const upperChecked = upperCb.checked;
+      outputEl.style.textTransform = upperChecked ? 'uppercase' : 'none';
+
+      // Plain text für Zählung
+      const plainText = toPlainText(result.text);
+      const count = plainText.length;
+      charCountEl.textContent = `Zeichen im Ergebnis: ${count}`;
+      warningTextEl.textContent = count > 40
+        ? "⚠️ Die maximale Länge von 40 Zeichen wurde überschritten."
+        : "";
+
+      // Fortschrittsbalken
+      const percent = Math.min(100, Math.round((count / 40) * 100));
+      progBar.style.width = percent + '%';
+
+      // Abkürzungsliste
+      const usedList = Array.from(result.used).map(key =>
+        `<li>• ${key.toUpperCase()} → ${katalog[key]}</li>`
+      );
+      abkListEl.innerHTML = usedList.join("");
     }
 
     // Copy / Download / Clear
     function copyResult() {
-      const plain = toPlainText(document.getElementById('output').innerHTML || "");
+      const plain = toPlainText(outputEl.innerHTML || "");
+      const textToCopy = upperCb.checked ? plain.toUpperCase() : plain;
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(plain).then(()=> showTempMessage('Kopiert!')).catch(()=> fallbackCopy(plain));
-      } else fallbackCopy(plain);
+        navigator.clipboard.writeText(textToCopy).then(()=> showTempMessage('Kopiert!')).catch(()=> fallbackCopy(textToCopy));
+      } else fallbackCopy(textToCopy);
     }
     function fallbackCopy(text) {
       const ta = document.createElement('textarea'); ta.value = text;
@@ -1140,9 +1151,10 @@
       document.body.removeChild(ta);
     }
     function downloadTxtFile() {
-      const plain = toPlainText(document.getElementById('output').innerHTML || "");
+      const plain = toPlainText(outputEl.innerHTML || "");
+      const textToDownload = upperCb.checked ? plain.toUpperCase() : plain;
       const filename = 'abkuerzung_ergebnis.txt';
-      const blob = new Blob([plain], {type:'text/plain'});
+      const blob = new Blob([textToDownload], {type:'text/plain'});
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = filename;
@@ -1152,9 +1164,9 @@
       document.body.removeChild(a);
     }
     function clearAll() {
-      document.getElementById('inputText').value = '';
+      inputEl.value = '';
       processInput();
-      autosize(document.getElementById('inputText'));
+      autosize(inputEl);
     }
 
     function showTempMessage(msg) {
@@ -1177,29 +1189,28 @@
       applyInitialDarkMode();
       applyInitialUppercase();
 
-// Service Worker registrieren, falls unterstützt
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js').then(reg => {
-      console.log('ServiceWorker registriert:', reg.scope);
-    }).catch(err => console.warn('ServiceWorker Registrierung fehlgeschlagen:', err));
-  });
-}
+      // Service Worker registrieren, falls unterstützt
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js').then(reg => {
+            console.log('ServiceWorker registriert:', reg.scope);
+          }).catch(err => console.warn('ServiceWorker Registrierung fehlgeschlagen:', err));
+        });
+      }
 
       // Eventhandler
-      document.getElementById('darkToggle').addEventListener('click', () => { toggleDarkMode(); processInput(); });
-      document.getElementById('copyBtn').addEventListener('click', copyResult);
-      document.getElementById('downloadBtn').addEventListener('click', downloadTxtFile);
-      document.getElementById('clearBtn').addEventListener('click', clearAll);
+      darkToggle.addEventListener('click', () => { toggleDarkMode(); processInput(); });
+      copyBtn.addEventListener('click', copyResult);
+      downloadBtn.addEventListener('click', downloadTxtFile);
+      clearBtn.addEventListener('click', clearAll);
 
-      const upperCb = document.getElementById('upperCaseToggle');
       upperCb.addEventListener('change', () => { toggleUppercaseStorage(); processInput(); });
 
-      const ta = document.getElementById('inputText');
+      const ta = inputEl;
       ta.addEventListener('input', () => { autosize(ta); processInput(); });
 
       // initial
-      autosize(document.getElementById('inputText'));
+      autosize(inputEl);
       processInput();
     });
   </script>
